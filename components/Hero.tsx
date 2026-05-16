@@ -90,7 +90,7 @@ export default function Hero() {
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="neo-btn px-8 py-4 bg-[#FFE500] text-[#0A0A0A] font-display font-black text-base uppercase tracking-wider"
               >
-                Let's Talk ✉
+                Let's Talk
               </button>
             </div>
 
