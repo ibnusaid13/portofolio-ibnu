@@ -74,27 +74,53 @@ export default function Contact() {
             </div>
 
             {/* Social */}
-            <div>
-              <p className="font-mono text-xs uppercase tracking-widest text-[#0A0A0A]/50 mb-4">Follow Me</p>
-              <div className="flex gap-3">
-                {[
-                  { icon: Github, color: '#0A0A0A', bg: '#F5F0E8', label: 'GitHub' },
-                  { icon: Linkedin, color: '#0A77B5', bg: '#EBF4FC', label: 'LinkedIn' },
-                  { icon: Instagram, color: '#E1306C', bg: '#FDE8EF', label: 'Instagram' },
-                  { icon: Mail, color: '#FF6B00', bg: '#FFF0E5', label: 'Email' },
-                ].map(({ icon: Icon, color, bg, label }) => (
-                  <a
-                    key={label}
-                    href="#"
-                    className="w-12 h-12 border-2 border-[#0A0A0A] flex items-center justify-center shadow-[2px_2px_0_#0A0A0A] hover:shadow-[4px_4px_0_#0A0A0A] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all"
-                    style={{ background: bg }}
-                    aria-label={label}
-                  >
-                    <Icon size={18} style={{ color }} />
-                  </a>
-                ))}
-              </div>
-            </div>
+<div>
+  <p className="font-mono text-xs uppercase tracking-widest text-[#0A0A0A]/50 mb-4">Follow Me</p>
+  <div className="flex gap-3">
+    {[
+      { 
+        icon: Github, 
+        color: '#0A0A0A', 
+        bg: '#F5F0E8', 
+        label: 'GitHub', 
+        href: 'https://github.com/ibnusaid13' // <-- Ganti dengan link GitHub Anda
+      },
+      { 
+        icon: Linkedin, 
+        color: '#0A77B5', 
+        bg: '#EBF4FC', 
+        label: 'LinkedIn', 
+        href: 'https://linkedin.com/in/ibnu-said' // <-- Ganti dengan link LinkedIn Anda
+      },
+      { 
+        icon: Instagram, 
+        color: '#E1306C', 
+        bg: '#FDE8EF', 
+        label: 'Instagram', 
+        href: 'https://instagram.com/skynuu_' // <-- Ganti dengan link Instagram Anda
+      },
+      { 
+        icon: Mail, 
+        color: '#FF6B00', 
+        bg: '#FFF0E5', 
+        label: 'Email', 
+        href: 'mailto:ibnusaid500@gmail.com' // <-- Ganti dengan alamat email Anda
+      },
+    ].map(({ icon: Icon, color, bg, label, href }) => (
+      <a
+        key={label}
+        href={href}
+        target={label === 'Email' ? '_self' : '_blank'}
+        rel={label === 'Email' ? '' : 'noopener noreferrer'}
+        className="w-12 h-12 border-2 border-[#0A0A0A] flex items-center justify-center shadow-[2px_2px_0_#0A0A0A] hover:shadow-[4px_4px_0_#0A0A0A] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all"
+        style={{ background: bg }}
+        aria-label={label}
+      >
+        <Icon size={18} style={{ color }} />
+      </a>
+    ))}
+  </div>
+</div>
 
             {/* Availability badge */}
             <div className="mt-10 inline-flex items-center gap-3 bg-[#AAFF00] border-2 border-[#0A0A0A] px-5 py-3 shadow-[4px_4px_0_#0A0A0A]">
